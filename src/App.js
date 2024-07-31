@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import * as React from 'react';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Navbar from './Navbar';
+import IntegMap from './IntegMap';
+import AgriculturalDataPage from './AgriculturalDataPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<IntegMap />} />
+          <Route path="/agricultural-data" element={<AgriculturalDataPage />} />
+          {/* Add other routes here */}
+        </Routes>
+      </div>
+    
   );
 }
 
